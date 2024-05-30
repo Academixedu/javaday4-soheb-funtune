@@ -11,9 +11,10 @@ public class RepeatName {
         System.out.println("How many times want to repeat : ");
         int count = scanner.nextInt();
 
-        RepeatWithFor(name, count);
-        RepeatWithWhile(name, count);
-        RepeatWithDoWhile(name, count);
+        // RepeatWithFor(name, count);
+        // RepeatWithWhile(name, count);
+        // RepeatWithDoWhile(name, count);
+        dynamicLoopFuntion("dowhile", name, count);
 
     }
 
@@ -44,4 +45,38 @@ public class RepeatName {
             i++;
         } while (i <= count);
     }
+
+    public static void dynamicLoopFuntion(String condition, String name, int count) {
+        switch (condition) {
+            case "while": {
+                System.out.println("Printed with WHILE LOOP");
+                int i = 1;
+                while (i <= count) {
+                    System.err.println(name + i + "Time");
+                    i++;
+                }
+            }
+                break;
+            case "dowhile": {
+                System.out.println("Printed with DO WHILE LOOP");
+                int i = 1;
+                do {
+                    System.err.println(name + i + "Time");
+                    i++;
+                } while (i <= count);
+            }
+                break;
+
+            default: {
+                System.out.println("Printed with FOR LOOP");
+                for (int i = 1; i <= count; i++) {
+                    System.err.println(name + i + "Time");
+
+                }
+            }
+                break;
+        }
+
+    }
+
 }
